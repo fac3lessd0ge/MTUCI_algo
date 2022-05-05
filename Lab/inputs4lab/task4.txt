@@ -1,0 +1,21 @@
+def de_cipher(shif_str = 'ffffffffffffffffffffffff'):
+    deq=Deque()
+    shif = 'rferfdrfirfcrfirfurfsrftrfirfmrfmrforfcrftrforfnrfdrfirfdrfkrfarfsrferftrft'
+    for i in shif:
+        deq.addRear(i)
+    result = ''
+    
+    for i in shif_str:
+        m=''
+        s=''
+        while m != i:
+            m=deq.removeRear()
+            deq.addFront(m)
+        
+        deq.addFront(deq.removeRear())
+        s = deq.removeRear()
+        result+=s
+        deq.addFront(s)
+    print(result)
+
+de_cipher()

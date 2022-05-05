@@ -8,30 +8,28 @@ def iterate(step, depth):
     if depth <= 0:
         forward(step)
     else:
+        new_step = step * math.sqrt(2)/2
         right(135)
-        forward(step * math.sqrt(2)/2)
+        forward(new_step)
         left(90)
-        iterate(step * math.sqrt(2) / 2, depth - 1)
+        iterate(new_step, depth - 1)
         left(90)
-        forward(step * math.sqrt(2)/2)
+        forward(new_step)
         left(90)
-        forward(step * math.sqrt(2) / 2)
+        forward(new_step)
         right(135)
 
         forward(step)
 
         right(135)
-        forward(step * math.sqrt(2) / 2)
+        forward(new_step)
         left(90)
-        forward(step * math.sqrt(2) / 2)
+        forward(new_step)
         left(90)
-        iterate(step * math.sqrt(2) / 2, depth - 1)
+        iterate(new_step, depth - 1)
         left(90)
-        forward(step * math.sqrt(2) / 2)
+        forward(new_step)
         right(135)
-
-
-iterate(100, 2)
 
 
 def run(step, depth):
